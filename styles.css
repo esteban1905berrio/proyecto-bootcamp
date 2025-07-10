@@ -1,0 +1,47 @@
+body {
+  background: linear-gradient(90deg, #fffbe7 0%, #ffe082 100%);
+}
+
+section {
+  margin-bottom: 40px;
+}
+
+#intro {
+  background: linear-gradient(90deg, #fffde4 0%, #ffd886 100%);
+  border-radius: 20px;
+  box-shadow: 0 4px 16px rgba(255, 193, 7, 0.08);
+}
+
+h1, h2 {
+  color: #ff9800;
+  font-weight: bold;
+}
+
+.navbar {
+  background: linear-gradient(90deg, #ffb300 0%, #ff9800 100%) !important;
+  margin-bottom: 30px;
+}
+
+.navbar-brand, .nav-link, .navbar-dark .navbar-nav .nav-link.active {
+  color: #fffde4 !important;
+}
+
+#resultadoEstimacion {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #f57c00;
+}
+
+ul {
+  list-style-type: square;
+}
+
+.btn-success {
+  background-color: #ffb300;
+  border-color: #ffb300;
+}
+
+.btn-success:hover {
+  background-color: #ffa000;
+  border-color: #ffa000;
+} 

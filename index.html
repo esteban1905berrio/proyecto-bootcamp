@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proyecto Energías Limpias</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome (opcional) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- PapaParse -->
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"><i class="fas fa-sun"></i> Energía Solar</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#intro">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="#tabla">Datos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#formulario">Estimación</a></li>
+          <li class="nav-item"><a class="nav-link" href="#dashboard">Dashboard</a></li>
+          <li class="nav-item"><a class="nav-link" href="#recursos">Recursos</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Portada / Introducción -->
+  <section id="intro" class="container py-5">
+    <div class="row align-items-center">
+      <div class="col-md-7">
+        <h1 class="display-4">Energía Solar: El Futuro Sostenible</h1>
+        <p class="lead">Descubre el impacto y la importancia de la energía solar en la transición energética global.</p>
+        <p>Explora datos reales sobre el uso, producción y capacidad instalada de energía solar en el mundo. Calcula tu propio consumo solar y aprende cómo puedes contribuir a un futuro más limpio.</p>
+      </div>
+      <div class="col-md-5 text-center">
+        <i class="fas fa-sun fa-8x text-warning"></i>
+      </div>
+    </div>
+  </section>
+
+  <!-- Visualización de Datos -->
+  <section id="tabla" class="container py-5">
+    <h2 class="mb-4">Visualización de Datos Solares</h2>
+    <p><strong>Instrucción:</strong> Sube el archivo <code>12 solar-energy-consumption.csv</code> para ver la producción solar de Colombia por año.</p>
+    <input type="file" id="csvFileInput" accept=".csv" class="form-control mb-3" />
+    <div id="csvTableContainer" class="table-responsive"></div>
+    <div id="tablaMensaje" class="text-danger mt-2"></div>
+  </section>
+
+  <!-- Formulario de Estimación -->
+  <section id="formulario" class="container py-5">
+    <h2 class="mb-4">Calcula tu porcentaje de energía solar</h2>
+    <form id="estimacionForm" class="row g-3">
+      <div class="col-md-6">
+        <label for="consumoTotal" class="form-label">Consumo eléctrico total (kWh)</label>
+        <input type="number" class="form-control" id="consumoTotal" required min="1">
+      </div>
+      <div class="col-md-6 d-flex align-items-end">
+        <button type="submit" class="btn btn-success">Calcular</button>
+      </div>
+    </form>
+    <div id="resultadoEstimacion" class="mt-4"></div>
+  </section>
+
+  <!-- Dashboard de Gráficos -->
+  <section id="dashboard" class="container py-5">
+    <h2 class="mb-4">Dashboard Solar</h2>
+    <div class="alert alert-info">
+      <ul class="mb-0">
+        <li><strong>Gráfico de Barras y Líneas:</strong> Sube <code>12 solar-energy-consumption.csv</code> (Colombia).</li>
+        <li><strong>Gráfico de Torta:</strong> Sube <code>15 share-electricity-solar.csv</code> (Colombia).</li>
+        <li><strong>Gráfico de Área:</strong> Sube <code>14 solar-share-energy.csv</code> (Colombia).</li>
+      </ul>
+      <span class="small">Asegúrate de subir los archivos correctos para ver los datos reales de Colombia.</span>
+    </div>
+    <div class="row">
+      <div class="col-md-6 mb-4">
+        <canvas id="graficoBarras"></canvas>
+      </div>
+      <div class="col-md-6 mb-4">
+        <canvas id="graficoTorta"></canvas>
+      </div>
+      <div class="col-md-6 mb-4">
+        <canvas id="graficoLineas"></canvas>
+      </div>
+      <div class="col-md-6 mb-4">
+        <canvas id="graficoArea"></canvas>
+      </div>
+    </div>
+  </section>
+
+  <!-- Recursos y enlaces -->
+  <section id="recursos" class="container py-5">
+    <h2 class="mb-4">Recursos y Enlaces de Interés sobre Energía Solar</h2>
+    <ul>
+      <li><a href="https://www.kaggle.com/datasets/belayethossainds/renewable-energy-world-wide-19652022" target="_blank">Datos globales de energía solar (Kaggle)</a></li>
+      <li><a href="https://es.wikipedia.org/wiki/Energ%C3%ADa_solar" target="_blank">Wikipedia: Energía Solar</a></li>
+      <li><a href="https://www.energias-renovables.com/solar/" target="_blank">Noticias de Energía Solar</a></li>
+      <li><a href="https://www.w3schools.com/" target="_blank">W3Schools - Tutoriales Web</a></li>
+      <li><a href="https://desarrolloweb.com/manuales/css3.html" target="_blank">Manual de CSS3</a></li>
+      <li><a href="https://aws.amazon.com/es/what-is/javascript/" target="_blank">¿Qué es JavaScript? (AWS)</a></li>
+      <li><a href="https://github.com/" target="_blank">GitHub</a></li>
+    </ul>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-light text-center py-3 mt-5 border-top">
+    <span class="text-secondary">Proyecto Energía Solar &copy; 2024 | Desarrollado por Esteban | Bootcamp Programación</span>
+  </footer>
+
+  <!-- Script principal -->
+  <script src="main.js"></script>
+
+</body>
+</html>
