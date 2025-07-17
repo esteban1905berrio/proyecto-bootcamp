@@ -1,0 +1,121 @@
+ <!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard de Energías Renovables - Punto 3</title>
+  <link rel="stylesheet" href="estilo.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1><i class="fas fa-solar-panel"></i> Dashboard de Energía Renovable</h1>
+      <p>Análisis integral de producción y consumo de energía renovable</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Filtros -->
+    <section class="filtros">
+      <div class="filtro-grupo">
+        <label for="paisSelect"><i class="fas fa-globe"></i> País/Región:</label>
+        <select id="paisSelect"></select>
+      </div>
+      
+      <div class="filtro-grupo">
+        <label for="anioSelect"><i class="fas fa-calendar"></i> Año:</label>
+        <select id="anioSelect"></select>
+      </div>
+      
+      <div class="filtro-grupo">
+        <label for="rangoAnios"><i class="fas fa-chart-line"></i> Rango de años:</label>
+        <select id="rangoAnios">
+          <option value="5">Últimos 5 años</option>
+          <option value="10">Últimos 10 años</option>
+          <option value="20">Últimos 20 años</option>
+          <option value="all">Todos los años</option>
+        </select>
+      </div>
+    </section>
+
+    <!-- Dashboard Grid -->
+    <section class="dashboard-grid">
+      <!-- Gráfico 1: Producción por Fuente (Barras) -->
+      <div class="grafico-card">
+        <div class="grafico-header">
+          <h2><i class="fas fa-chart-bar"></i> Producción de Energía Renovable por Fuente</h2>
+          <p>Muestra la cantidad de energía producida por cada fuente renovable (TWh)</p>
+        </div>
+        <div class="grafico-container">
+          <canvas id="graficoBarras"></canvas>
+        </div>
+      </div>
+
+      <!-- Gráfico 2: Participación de Energías Renovables (Torta) -->
+      <div class="grafico-card">
+        <div class="grafico-header">
+          <h2><i class="fas fa-chart-pie"></i> Participación de Energías Renovables</h2>
+          <p>Porcentaje de cada tipo de energía renovable en el total del consumo eléctrico</p>
+        </div>
+        <div class="grafico-container">
+          <canvas id="graficoTorta"></canvas>
+        </div>
+      </div>
+
+      <!-- Gráfico 3: Tendencia de Generación Eléctrica Renovable (Líneas) -->
+      <div class="grafico-card full-width">
+        <div class="grafico-header">
+          <h2><i class="fas fa-chart-line"></i> Tendencia de Generación Eléctrica Renovable</h2>
+          <p>Evolución de la generación eléctrica de las diferentes fuentes de energía renovable a lo largo del tiempo</p>
+        </div>
+        <div class="grafico-container">
+          <canvas id="graficoLineas"></canvas>
+        </div>
+      </div>
+
+      <!-- Gráfico 4: Generación Renovable vs Convencional (Área) -->
+      <div class="grafico-card full-width">
+        <div class="grafico-header">
+          <h2><i class="fas fa-chart-area"></i> Comparación entre Generación Renovable y Convencional</h2>
+          <p>Compara la generación de energía renovable con la estimación de energía convencional a lo largo del tiempo</p>
+        </div>
+        <div class="grafico-container">
+          <canvas id="graficoArea"></canvas>
+        </div>
+      </div>
+    </section>
+
+    <!-- Resumen de Datos -->
+    <section class="resumen-datos">
+      <div class="resumen-card">
+        <h3><i class="fas fa-info-circle"></i> Información del Dataset</h3>
+        <div class="resumen-grid">
+          <div class="resumen-item">
+            <span class="resumen-label">Período de datos:</span>
+            <span class="resumen-valor" id="periodoDatos">1965 - 2022</span>
+          </div>
+          <div class="resumen-item">
+            <span class="resumen-label">Regiones disponibles:</span>
+            <span class="resumen-valor" id="regionesDisponibles">-</span>
+          </div>
+          <div class="resumen-item">
+            <span class="resumen-label">Fuentes de energía:</span>
+            <span class="resumen-valor">Eólica, Solar, Hidroeléctrica, Geotérmica, Bioenergía</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Proyecto Energías Renovables - Talento Tech Bootcamp | Punto 3 -GRUPO SOLARIUM  Dashboard Integral</p>
+    </div>
+  </footer>
+
+  <script src="js/dashboard.js"></script>
+</body>
+</html>
